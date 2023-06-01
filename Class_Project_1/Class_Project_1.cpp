@@ -2,11 +2,27 @@
 //
 
 #include <iostream>
+#include "Array.h"
+#include "Array.cpp"
+
+#define MY_NULL 0 
 
 int main()
 {
     std::cout << "Hello World!\n";
-    std::cout << "Hello World!\n";
+
+    RawArray myArray(10);
+    myArray.Initial(5);
+
+    std::cout << "Original Array: \n";
+    myArray.Print(); 
+
+    myArray.Replace(5, 0);
+    std::cout << "Modified Array: \n"; 
+    myArray.Print();
+
+    return 0;
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
