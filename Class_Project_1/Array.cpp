@@ -16,6 +16,19 @@ RawArray::RawArray(int in_Size) : Size(in_Size)
 	InitialElement[3] = 0;
 	InitialElement[4] = 1;
 	InitialElement[5] = 5;
+	
+	if (Size > 6)
+	{
+		std::cout << "Advertencia: El tamaño especificado es mayor que el número de valores asignados. "\
+			"Los valores restantes se inicializarán a 0." << std::endl;
+
+
+		// Inicializar los valores restantes en 0
+		for (int i = 6; i < Size; i++)
+		{
+			InitialElement[i] = 0;
+		}
+	}
 }
 
 //
