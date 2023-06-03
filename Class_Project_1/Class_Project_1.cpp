@@ -11,8 +11,8 @@ int main()
 {
     std::cout << "Hello World!\n";
 
-    RawArray myArray(10);
-    myArray.Initial(5);
+    RawArray myArray(6);
+    //myArray.Initial(5);
 
     std::cout << "Original Array: \n";
     myArray.Print(); 
