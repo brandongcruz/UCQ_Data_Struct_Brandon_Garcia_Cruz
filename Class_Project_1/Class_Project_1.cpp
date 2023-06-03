@@ -9,16 +9,21 @@
 
 int main()
 {
-    std::cout << "Hello World!\n";
+// Para la realizacion no se incluyo una restriccion en el codigo si se intenta ingresar valores distintos de int debido a que no se considero necesario
+// Pues esta restriccion se encuentra implicita en la declaracion del RawArray el cual unicamente recibe valores int.
 
-    RawArray myArray(6);
+    RawArray myArray(9);
     //myArray.Initial(5);
 
+
     std::cout << "Original Array: \n";
+
     myArray.Print(); 
 
     myArray.Replace(5, 0);
+
     std::cout << "Modified Array: \n"; 
+
     myArray.Print();
 
     return 0;
