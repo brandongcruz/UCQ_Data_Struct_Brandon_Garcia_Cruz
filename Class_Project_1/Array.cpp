@@ -19,11 +19,6 @@ RawArray::RawArray(int in_Size) : Size(in_Size)
 
 
 // Restriccion del tamano del arreglo. 
-	if (Size > 6)
-	{
-		std::cout << "Advertencia: El tamaño especificado es mayor que el número de valores asignados. "\
-			"Los valores restantes se inicializarán a 0." << std::endl;
-
 	
 	if (Size > 6)
 	{
@@ -38,7 +33,15 @@ RawArray::RawArray(int in_Size) : Size(in_Size)
 			InitialElement[i] = 0;
 		}
 	}
-}
+	else if  (Size < 6) {
+        std::cout << "Error: El tamaño especificado es menor que el tamaño mínimo requerido (6)." << std::endl;
+        Size = 6;
+		for (int i = 6; i < Size; i++)
+		{
+			InitialElement[i] = 0;
+		}
+    }
+
 
 
 //Destructor de la clase. Se encarga de liberar la memoria asignada  dinamicamente apra el arreglo.
