@@ -16,20 +16,20 @@ RawArray::RawArray(int in_Size) : Size(in_Size)
 	InitialElement[3] = 0;
 	InitialElement[4] = 1;
 	InitialElement[5] = 5;
-<<<<<<< HEAD
+
 
 // Restriccion del tamano del arreglo. 
 	if (Size > 6)
 	{
-		std::cout << "Advertencia: El tama�o especificado es mayor que el n�mero de valores asignados. "\
-			"Los valores restantes se inicializar�n a 0." << std::endl;
-=======
+		std::cout << "Advertencia: El tamaño especificado es mayor que el número de valores asignados. "\
+			"Los valores restantes se inicializarán a 0." << std::endl;
+
 	
 	if (Size > 6)
 	{
-		std::cout << "Advertencia: El tamaño especificado es mayor que el número de valores asignados. "\
-			"Los valores restantes se inicializarán a 0." << std::endl;
->>>>>>> 861e8343e1733f94635ba68ecabba0f669990ebb
+		std::cout << "Advertencia: El tamaÃ±o especificado es mayor que el nÃºmero de valores asignados. "\
+			"Los valores restantes se inicializarÃ¡n a 0." << std::endl;
+
 
 
 		// Inicializar los valores restantes en 0
