@@ -92,13 +92,13 @@ void RawArray::TestCaseReplace(int Values)
 
 	int* auxPosition = InitialElement;
 
+	//Utilizamos el for para rrecorrer los elementos del arreglo y asignarles el valor "InitialValue"
 	for (int i = 0; i < Size; i++)
 	{
 		*auxPosition = Values++;
 
-		auxPosition;
+		auxPosition++;
 	}
-
 }
 
 // A PARTIR DE AQUI SE CONSTRUYERON LAS FUNCIONES PARA REALIZAR EL EXAMEN.

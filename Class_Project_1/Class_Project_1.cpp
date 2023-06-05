@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "Array.h"
+#include "Array.cpp"
 
 
 #define MY_NULL 0 
@@ -13,23 +14,24 @@ int main()
 // Pues esta restriccion se encuentra implicita en la declaracion del RawArray el cual unicamente recibe valores int.
     std::cout << "Hello Everyone\n";
 
-    RawArray Test = RawArray(10);
 
-    RawArray myArray(9);
+    RawArray myArray(10);
 
-    //myArray.TestCaseReplace(1);
+    //myArray.Initial();
 
-    //myArray.TestCaseReplace();
+    myArray.TestCaseReplace(1);
+
+    //myArray.TestCaseReplace(3);
    
     std::cout << "Original Array: \n";
 
-    //myArray.Print(); 
+    myArray.Print(); 
 
-    //myArray.Replace(1, 0);
+    myArray.Replace(9, 0);
 
     std::cout << "Modified Array: \n"; 
 
-   // myArray.Print();
+   myArray.Print();
     
     //Apartado examen 
     //Funcion AssignEveryXElements

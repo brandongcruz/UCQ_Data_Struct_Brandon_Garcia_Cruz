@@ -53,6 +53,5 @@ public:
 	// Este atributo indica el tamano del arreglo. 
 	int Size;
 
-
 };
 
