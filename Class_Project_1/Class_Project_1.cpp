@@ -28,7 +28,16 @@ int main()
     myArray.Print();
     
     //Apartado examen 
+     std::cout << "Hello Everyone\n";
+    RawArray myArray(9);
+    myArray.Initial(2);
+    std::cout << "Original Array: \n";
 
+    myArray.Print();
+    myArray.AssignEveryXElements(5, 4);
+    std::cout << "Modified Array: \n";
+
+    myArray.Print();
     return 0;
 
 }
