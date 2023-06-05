@@ -8,22 +8,12 @@ RawArray::RawArray(int in_Size) : Size(in_Size)
 {
 	InitialElement = new int[Size];
 
-	// just added 
+	// Restriccion del tamano del arreglo. 
 
-	InitialElement[0] = 1;
-	InitialElement[1] = 5;
-	InitialElement[2] = 9;
-	InitialElement[3] = 0;
-	InitialElement[4] = 1;
-	InitialElement[5] = 5;
-
-
-// Restriccion del tamano del arreglo. 
-	
 	if (Size > 6)
 	{
-		std::cout << "Advertencia: El tamaÃ±o especificado es mayor que el nÃºmero de valores asignados. "\
-			"Los valores restantes se inicializarÃ¡n a 0." << std::endl;
+		std::cout << "Advertencia: El Size especificado es mayor que el numero de valores asignados. "\
+			"Los valores restantes se inicializaran a 0." << std::endl;
 
 
 
@@ -33,14 +23,15 @@ RawArray::RawArray(int in_Size) : Size(in_Size)
 			InitialElement[i] = 0;
 		}
 	}
-	else if  (Size < 6) {
-        std::cout << "Error: El tamaño especificado es menor que el tamaño mínimo requerido (6)." << std::endl;
-        Size = 6;
+	else if (Size < 6) {
+		std::cout << "Error: El size especificado es menor que el size minimo requerido (6)." << std::endl;
+		Size = 6;
 		for (int i = 6; i < Size; i++)
 		{
 			InitialElement[i] = 0;
 		}
-    }
+	}
+}
 
 
 
@@ -52,6 +43,7 @@ RawArray::~RawArray()
 	std::cout << "Salida destructor" << '\n';
 
 }
+
 //Esta funcion se utiliza para inicializar todos los elementos del arreglo con un valor inicial. 
 //InitialValue representa el valor con el que se desea inicializar los elementos. 
 void RawArray::Initial(int InitialValue)
@@ -67,6 +59,7 @@ void RawArray::Initial(int InitialValue)
 		auxPosition++; 
 	}
 }
+
 //Esta funcion se utiliza para imprimir en la consola todos los valores de los elementos del arreglo.
 void RawArray::Print()
 {
@@ -81,19 +74,48 @@ void RawArray::Print()
 	std::cout << '\n';
 }
 
+
 //Utiliza un puntero auxPosition para recorrer los elementos del arreglo y compara el valor del contenido de cada espacio de memoria con utilizando el operador *. 
 //Si el valor X coincide, asigna Y al elemento mediante el operador de referencia *.
 //Luego, incrementa el puntero auxPosition para avanzar al siguiente elemento y realizar la misma accion.
-
 void RawArray::Replace(int X, int Y)
 {
-	int* auxPosition = InitialElement; 
+	int* auxPosition = InitialElement;
+
+	//flag Es un indicador que usaremos para indicar si se realizo algun reemplazo 
+
+	bool flag = false; 
+
 	for (int i = 0; i < Size; i++)
 	{
 		if (*auxPosition == X)
 		{
 			*auxPosition = Y;
+
+			// Si Existe algun numero que deba ser sustituido, la bandera cambiara de estado a true
+			flag = true; 
 		}
 		auxPosition++;
 	}
+
+	// Si la bandera es true le deja saber al usuario que hubo un cambio, de lo contrario le hara saber que no habin cambios que realizar. 
+	if (flag)
+	{
+		std::cout << "Se realizo el reemplazo de " << X << " por " << Y << std::endl;
+	}
+	else
+	{
+		std::cout << "No se encontro ningun valor igual a " << X << ". No se realizo ningun cambio." << std::endl;
+	}
+}
+
+
+void RawArray::ArrayInside()
+{
+	InitialElement[0] = 1;
+	InitialElement[1] = 5;
+	InitialElement[2] = 9;
+	InitialElement[3] = 0;
+	InitialElement[4] = 1;
+	InitialElement[5] = 5;
 }

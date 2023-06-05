@@ -15,12 +15,13 @@ int main()
     RawArray myArray(9);
     //myArray.Initial(5);
 
-
+    myArray.ArrayInside();
+   
     std::cout << "Original Array: \n";
 
     myArray.Print(); 
 
-    myArray.Replace(5, 0);
+    myArray.Replace(100, 0);
 
     std::cout << "Modified Array: \n"; 
 
