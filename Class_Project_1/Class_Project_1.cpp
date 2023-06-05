@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include "Array.h"
-#include "Array.cpp"
+
 
 #define MY_NULL 0 
 

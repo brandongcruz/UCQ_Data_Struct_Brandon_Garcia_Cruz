@@ -9,6 +9,24 @@ RawArray::RawArray(int in_Size) : Size(in_Size)
 	InitialElement = new int[Size];
 
 	// Restriccion del tamano del arreglo. 
+
+	if (Size > 6)
+	{
+		std::cout << "Advertencia: El Size especificado es mayor que el numero de valores asignados. "\
+			"Los valores restantes se inicializaran a 0." << std::endl;
+
+
+
+		// Inicializar los valores restantes en 0
+		for (int i = 6; i < Size; i++)
+		{
+			InitialElement[i] = 0;
+		}
+	}
+	else if (Size < 6) {
+		std::cout << "Error: El size especificado es menor que el size minimo requerido (6)." << std::endl;
+		return;
+	}
 }
 
 
@@ -90,15 +108,10 @@ void RawArray::Replace(int X, int Y)
 
 void RawArray::TestCaseReplace(int Valores)
 {
-
-	int* auxPosition = InitialElement;
-
-	//Utilizamos el for para rrecorrer los elementos del arreglo y asignarles el valor "InitialValue"
-	for (int i = 0; i < Size; i++)
-	{
-		*auxPosition = Valores++;
-
-		auxPosition++;
-	}
-	 
+	InitialElement[0] = 1;
+	InitialElement[1] = 5;
+	InitialElement[2] = 9;
+	InitialElement[3] = 0;
+	InitialElement[4] = 1;
+	InitialElement[5] = 5;
 }

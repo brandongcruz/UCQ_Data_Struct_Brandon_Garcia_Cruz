@@ -3,11 +3,11 @@
 
 #include <iostream>
 #include "Array.h"
-#include "Array.cpp"
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    std::cout << "Hello everyone!\n";
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
