@@ -13,9 +13,9 @@ int main()
 // Pues esta restriccion se encuentra implicita en la declaracion del RawArray el cual unicamente recibe valores int.
 
     RawArray myArray(9);
-    //myArray.Initial(5);
+    myArray.TestCaseReplace(1);
 
-    myArray.ArrayInside();
+    //myArray.TestCaseReplace();
    
     std::cout << "Original Array: \n";
 

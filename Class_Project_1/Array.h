@@ -15,7 +15,8 @@ public:
 	~RawArray(); 
 
 // Esta funcion realiza la asignacion del contenido del array. 
-	void ArrayInside();
+	//void TestCaseReplace();
+	void TestCaseReplace(int Valores);
 
 //Es una funcion que se encarga de iniciarizar todos los elementos del arreglo. 
 //El parametro InitialValue funciona para indicar el valor deseado para inicializar los elementos.  
@@ -26,6 +27,8 @@ public:
 
 //Su funcion es buscar en un arreglo todos los elementos con valor X y remplazarlos por Y. 
 	void Replace(int X, int Y);
+
+
 
 //Es un puntero que apunta a la primera posicion del arreglo. Sirve como referencia 
 	int* InitialElement; 
