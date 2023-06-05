@@ -27,7 +27,26 @@ public:
 
 //Su funcion es buscar en un arreglo todos los elementos con valor X y remplazarlos por Y. 
 	void Replace(int X, int Y);
+	
+//Funciones para el examen
+	
+	void AssignEveryXElements(int v, int x);
 
+	void SortFunction();
+
+	void AppendArray(RawArray arrayToAppend);
+
+	void SetSize(int newSize);
+
+	void Insert(RawArray arrayToInsert, int startIndex);
+
+	void SumArrays(RawArray A, RawArray B);
+
+	int GetIndexOf(int x);
+
+	int GetLastOf(int x); 
+
+	RawArray GetIndicesOf(int x);
 
 
 //Es un puntero que apunta a la primera posicion del arreglo. Sirve como referencia 
