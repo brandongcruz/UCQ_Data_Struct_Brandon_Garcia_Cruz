@@ -21,7 +21,7 @@ int main()
 
     myArray.Print(); 
 
-    myArray.Replace(100, 0);
+    myArray.Replace(1, 0);
 
     std::cout << "Modified Array: \n"; 
 
@@ -29,10 +29,11 @@ int main()
     
     //Apartado examen 
     //Funcion AssignEveryXElements
-    RawArray myArray(9);
+
     myArray.Initial(2);
     std::cout << "Original Array: \n";
     myArray.Print();
+
     myArray.AssignEveryXElements(5, 4);
     std::cout << "Modified Array: \n";
     myArray.Print();

@@ -1,6 +1,5 @@
-#include "Array.h"
 #include <iostream>
-
+#include "Array.h"
 
 //Constructor de la clase: el prametro "in_Size" se utiliza para determinar el tamano del array dinamico "InitialElement". 
 //"New init " funciona para asignar la memoria "Size" que utilizara el arreglo
@@ -8,7 +7,12 @@ RawArray::RawArray(int in_Size) : Size(in_Size)
 {
 	InitialElement = new int[Size];
 
+<<<<<<< HEAD
+	// Restriccion del tamano del arreglo. 
+
+=======
 	
+>>>>>>> 8a061c61d1cc8891e1af8cd9f29b7bd25c054032
 }
 
 
@@ -88,8 +92,18 @@ void RawArray::Replace(int X, int Y)
 }
 
 
-void RawArray::TestCaseReplace(int Valores)
+void RawArray::TestCaseReplace(int Values)
 {
+<<<<<<< HEAD
+	int* auxPosition = InitialElement; 
+
+	for (int i = 0; i < Size; i++)
+	{
+		*auxPosition = Values++;
+
+		auxPosition;
+	}
+=======
 	InitialElement[0] = 1;
 	InitialElement[1] = 5;
 	InitialElement[2] = 9;
@@ -194,4 +208,5 @@ int RawArray::GetLastOf(int x)
 RawArray RawArray::GetIndicesOf(int x)
 {
 	return NULL;
+>>>>>>> 8a061c61d1cc8891e1af8cd9f29b7bd25c054032
 }
