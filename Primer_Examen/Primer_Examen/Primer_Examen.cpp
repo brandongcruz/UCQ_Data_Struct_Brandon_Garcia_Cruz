@@ -7,7 +7,16 @@
 
 int main()
 {
-    std::cout << "Hello everyone!\n";
+    std::cout << "Hello Everyone\n";
+    RawArray myArray(9);
+    myArray.Initial(2);
+    std::cout << "Original Array: \n";
+
+    myArray.Print();
+    myArray.AssignEveryXElements(5, 4);
+    std::cout << "Modified Array: \n";
+
+    myArray.Print();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
