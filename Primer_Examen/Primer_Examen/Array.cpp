@@ -63,7 +63,22 @@ void RawArray::Replace(int X, int Y)
 //Asignar valor V a uno de cada X elementos del RawArray, donde X y V son un entero.
 void RawArray::AssignEveryXElements(int v, int x)
 {
+int* auxPosition = InitialElement;
+	int counter = 1;
 
+	for (int i = 0; i < Size; i++)
+	{
+		if (counter == x)
+		{
+			*auxPosition = v;
+			counter = 1;
+		}
+		else
+		{
+			counter++;
+		}
+		auxPosition++;
+	}
 }
 
 //Ordena los elementos del RawArray de menor a mayor
