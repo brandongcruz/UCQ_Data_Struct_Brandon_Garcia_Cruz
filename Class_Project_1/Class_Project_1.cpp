@@ -11,32 +11,36 @@ int main()
 {
 // Para la realizacion no se incluyo una restriccion en el codigo si se intenta ingresar valores distintos de int debido a que no se considero necesario
 // Pues esta restriccion se encuentra implicita en la declaracion del RawArray el cual unicamente recibe valores int.
-     std::cout << "Hello Everyone\n";
+    std::cout << "Hello Everyone\n";
+
+    RawArray Test = RawArray(10);
+
     RawArray myArray(9);
-    myArray.TestCaseReplace(1);
+
+    //myArray.TestCaseReplace(1);
 
     //myArray.TestCaseReplace();
    
     std::cout << "Original Array: \n";
 
-    myArray.Print(); 
+    //myArray.Print(); 
 
-    myArray.Replace(1, 0);
+    //myArray.Replace(1, 0);
 
     std::cout << "Modified Array: \n"; 
 
-    myArray.Print();
+   // myArray.Print();
     
     //Apartado examen 
     //Funcion AssignEveryXElements
 
-    myArray.Initial(2);
+    //myArray.Initial(2);
     std::cout << "Original Array: \n";
-    myArray.Print();
+    //myArray.Print();
 
-    myArray.AssignEveryXElements(5, 4);
+    //myArray.AssignEveryXElements(5, 4);
     std::cout << "Modified Array: \n";
-    myArray.Print();
+    //myArray.Print();
     
     
     return 0;

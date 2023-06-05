@@ -1,5 +1,6 @@
-#include <iostream>
 #include "Array.h"
+#include <iostream>
+
 
 //Constructor de la clase: el prametro "in_Size" se utiliza para determinar el tamano del array dinamico "InitialElement". 
 //"New init " funciona para asignar la memoria "Size" que utilizara el arreglo
@@ -7,19 +8,13 @@ RawArray::RawArray(int in_Size) : Size(in_Size)
 {
 	InitialElement = new int[Size];
 
-<<<<<<< HEAD
-	// Restriccion del tamano del arreglo. 
-
-=======
-	
->>>>>>> 8a061c61d1cc8891e1af8cd9f29b7bd25c054032
 }
 
 
 
 //Destructor de la clase. Se encarga de liberar la memoria asignada  dinamicamente apra el arreglo.
 RawArray::~RawArray()
-{	
+{
 	std::cout << "Entrada destructor de RawArray" << '\n';
 	delete[] InitialElement;
 	std::cout << "Salida destructor" << '\n';
@@ -31,27 +26,27 @@ RawArray::~RawArray()
 void RawArray::Initial(int InitialValue)
 {
 
-	int* auxPosition = InitialElement; 
+	int* auxPosition = InitialElement;
 
 	//Utilizamos el for para rrecorrer los elementos del arreglo y asignarles el valor "InitialValue"
 	for (int i = 0; i < Size; i++)
 	{
 		*auxPosition = InitialValue;
 
-		auxPosition++; 
+		auxPosition++;
 	}
 }
 
 //Esta funcion se utiliza para imprimir en la consola todos los valores de los elementos del arreglo.
 void RawArray::Print()
 {
-	int* auxPosition = InitialElement; 
+	int* auxPosition = InitialElement;
 
 	for (int i = 0; i < Size; i++)
 	{
-		std::cout << *auxPosition << ", "; 
+		std::cout << *auxPosition << ", ";
 
-		auxPosition++; 
+		auxPosition++;
 	}
 	std::cout << '\n';
 }
@@ -66,7 +61,7 @@ void RawArray::Replace(int X, int Y)
 
 	//flag Es un indicador que usaremos para indicar si se realizo algun reemplazo 
 
-	bool flag = false; 
+	bool flag = false;
 
 	for (int i = 0; i < Size; i++)
 	{
@@ -75,7 +70,7 @@ void RawArray::Replace(int X, int Y)
 			*auxPosition = Y;
 
 			// Si Existe algun numero que deba ser sustituido, la bandera cambiara de estado a true
-			flag = true; 
+			flag = true;
 		}
 		auxPosition++;
 	}
@@ -94,8 +89,8 @@ void RawArray::Replace(int X, int Y)
 
 void RawArray::TestCaseReplace(int Values)
 {
-<<<<<<< HEAD
-	int* auxPosition = InitialElement; 
+
+	int* auxPosition = InitialElement;
 
 	for (int i = 0; i < Size; i++)
 	{
@@ -103,32 +98,7 @@ void RawArray::TestCaseReplace(int Values)
 
 		auxPosition;
 	}
-=======
-	InitialElement[0] = 1;
-	InitialElement[1] = 5;
-	InitialElement[2] = 9;
-	InitialElement[3] = 0;
-	InitialElement[4] = 1;
-	InitialElement[5] = 5;
-	// Restriccion del tamano del arreglo. 
 
-	if (Size > 6)
-	{
-		std::cout << "Advertencia: El Size especificado es mayor que el numero de valores asignados. "\
-			"Los valores restantes se inicializaran a 0." << std::endl;
-
-
-
-		// Inicializar los valores restantes en 0
-		for (int i = 6; i < Size; i++)
-		{
-			InitialElement[i] = 0;
-		}
-	}
-	else if (Size < 6) {
-		std::cout << "Error: El size especificado es menor que el size minimo requerido (6)." << std::endl;
-		return;
-	}
 }
 
 // A PARTIR DE AQUI SE CONSTRUYERON LAS FUNCIONES PARA REALIZAR EL EXAMEN.
@@ -161,11 +131,11 @@ void RawArray::SortFunction()
 
 }
 
-//AÃ±ade al RawArray "A" todos los elementos del RawArray "B", Manteniendo los elementos de "A" al principio y despues agregando los elementos de "B"
-void AppendArray(RawArray arrayToAppend)
+//Añade al RawArray "A" todos los elementos del RawArray "B", Manteniendo los elementos de "A" al principio y despues agregando los elementos de "B"
+void RawArray::AppendArray(RawArray arrayToAppend)
 {
-
 }
+
 
 //Modifica el tamano del RawArray para igualar el numero de elementos de newSize. 
 //Si newSize es mayor al Size actual del RawArray, Conserva el total de sus Size_elementos 
@@ -175,7 +145,7 @@ void RawArray::SetSize(int newSize)
 
 }
 
-//AÃ±ade los arrayToInsert.Size-elementos al RawArray que llamÃ³ la funciÃ³n Insert, a partir del elemento en startIndex.
+//Añade los arrayToInsert.Size-elementos al RawArray que llamó la función Insert, a partir del elemento en startIndex.
 void RawArray::Insert(RawArray arrayToInsert, int startIndex)
 {
 
@@ -189,14 +159,14 @@ void RawArray::SumArrays(RawArray A, RawArray B)
 
 }
 
-//Recibe un valor X, si encuentra un elemento con dicho valor dentro del RawArray, regresa la posiciÃ³n de dicho elemento.
+//Recibe un valor X, si encuentra un elemento con dicho valor dentro del RawArray, regresa la posición de dicho elemento.
 //Si no encuentra el valor X dentro del RawArray, regresa -1.
 int RawArray::GetIndexOf(int x)
 {
 	return -1;
 }
 
-//Regresar la posiciÃ³n del Ãºltimo elemento del RawArray con el valor X dado. 
+//Regresar la posición del último elemento del RawArray con el valor X dado. 
 //Si no encuentra ningun elemento con valor x, regresar -1.
 int RawArray::GetLastOf(int x)
 {
@@ -204,9 +174,9 @@ int RawArray::GetLastOf(int x)
 }
 
 //Recibe un valor X; regresa el indice de todos los elementos con valor X
-//Si no encuentra ningun elemento condicho valor, regresa un array cuyo primer y Ãºnico elemento es -1.
+//Si no encuentra ningun elemento condicho valor, regresa un array cuyo primer y único elemento es -1.
 RawArray RawArray::GetIndicesOf(int x)
 {
 	return NULL;
->>>>>>> 8a061c61d1cc8891e1af8cd9f29b7bd25c054032
+
 }
