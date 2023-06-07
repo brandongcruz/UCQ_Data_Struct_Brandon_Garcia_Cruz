@@ -17,32 +17,33 @@ int main()
 
     RawArray myArray(10);
 
-    //myArray.Initial();
-
     myArray.TestCaseReplace(1);
-
-    //myArray.TestCaseReplace(3);
-   
-    std::cout << "Original Array: \n";
+ 
+    std::cout << " \nOriginal Array: \n";
 
     myArray.Print(); 
 
     myArray.Replace(9, 0);
 
-    std::cout << "Modified Array: \n"; 
+    std::cout << " \nModified Array: \n"; 
 
-   myArray.Print();
+    myArray.Print();
     
-    //Apartado examen 
-    //Funcion AssignEveryXElements
+    //APARTADO PARA EL EXAMEN 
 
-    //myArray.Initial(2);
-    std::cout << "Original Array: \n";
-    //myArray.Print();
+    //AssignEveryXElements
+    std::cout << " \nOriginal Array: \n";
+    myArray.Print();
+    myArray.AssignEveryXElements(5, 2);
+    std::cout << " \nModified Array: \n";
+    myArray.Print();
 
-    //myArray.AssignEveryXElements(5, 4);
-    std::cout << "Modified Array: \n";
-    //myArray.Print();
+    //SortFunction
+    std::cout << " \nOriginal Array: \n";
+    myArray.Print();
+    myArray.SortFunction();
+    std::cout << " \nSorted Array: \n";
+    myArray.Print();
     
     
     return 0;

@@ -78,11 +78,11 @@ void RawArray::Replace(int X, int Y)
 	// Si la bandera es true le deja saber al usuario que hubo un cambio, de lo contrario le hara saber que no habin cambios que realizar. 
 	if (flag)
 	{
-		std::cout << "Se realizo el reemplazo de " << X << " por " << Y << std::endl;
+		std::cout << " \nSe realizo el reemplazo de " << X << " por " << Y << std::endl;
 	}
 	else
 	{
-		std::cout << "No se encontro ningun valor igual a " << X << ". No se realizo ningun cambio." << std::endl;
+		std::cout << " \nNo se encontro ningun valor igual a " << X << ". No se realizo ningun cambio." << std::endl;
 	}
 }
 
@@ -109,12 +109,16 @@ void RawArray::AssignEveryXElements(int v, int x)
 	int* auxPosition = InitialElement;
 	int counter = 1;
 
+	bool flag = false;
+
 	for (int i = 0; i < Size; i++)
 	{
 		if (counter == x)
 		{
 			*auxPosition = v;
 			counter = 1;
+
+			flag = true;
 		}
 		else
 		{
@@ -123,12 +127,42 @@ void RawArray::AssignEveryXElements(int v, int x)
 		auxPosition++;
 	}
 
+
+	if (flag)
+	{
+		std::cout << " \nSe realizo el remplazo del valor original en cada " << x << " casillas por el valor de " << v << std::endl;
+	}
+	else
+	{
+		std::cout << "No se encontro ningun valor igual a " << x << ". No se realizo ningun cambio." << std::endl;
+	}
 }
+
 
 //Ordena los elementos del RawArray de menor a mayor
 void RawArray::SortFunction()
 {
+	int* auxPosition = InitialElement;
 
+	bool flag = true;
+
+	for (int i = 0; i < Size - 1; i++)
+	{
+		for (int j = 0; j < Size - 1; j++)
+		{
+			if (InitialElement[j] > InitialElement[j + 1])
+			{
+				int aux = InitialElement[j];
+				InitialElement[j] = InitialElement[j + 1];
+				InitialElement[j + 1] = aux;
+			}
+		}
+	}
+ 
+	if (flag)
+	{
+		std::cout << " \nSe realizo un ordenamiendo burbuja al array, ahora estan acomodados de menor a mayor  \n";
+	}
 }
 
 //Añade al RawArray "A" todos los elementos del RawArray "B", Manteniendo los elementos de "A" al principio y despues agregando los elementos de "B"
