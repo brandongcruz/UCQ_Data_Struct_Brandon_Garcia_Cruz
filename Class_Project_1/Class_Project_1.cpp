@@ -19,30 +19,30 @@ int main()
 
     myArray.TestCaseReplace(1);
  
-    std::cout << " \nOriginal Array: \n";
+    std::cout << " \nArray Original: \n";
 
     myArray.Print(); 
 
     myArray.Replace(9, 0);
 
-    std::cout << " \nModified Array: \n"; 
+    std::cout << " \nArray Modificado: \n"; 
 
     myArray.Print();
     
     //APARTADO PARA EL EXAMEN 
 
     //AssignEveryXElements
-    std::cout << " \nOriginal Array: \n";
+    std::cout << " \nArray Original: \n";
     myArray.Print();
     myArray.AssignEveryXElements(5, 2);
-    std::cout << " \nModified Array: \n";
+    std::cout << " \nArray Modificado: \n";
     myArray.Print();
 
     //SortFunction
-    std::cout << " \nOriginal Array: \n";
+    std::cout << " \nArray Original: \n";
     myArray.Print();
     myArray.SortFunction();
-    std::cout << " \nSorted Array: \n";
+    std::cout << " \nArray Ordenado: \n";
     myArray.Print();
     
     

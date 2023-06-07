@@ -150,8 +150,10 @@ void RawArray::SortFunction()
 	{
 		for (int j = 0; j < Size - 1; j++)
 		{
+			//Se hace una comparativa entre cada componente del arreglo para determinar cual es el mayor 
 			if (InitialElement[j] > InitialElement[j + 1])
 			{
+				// se actualiza la variable auxiliar de acuerdo al valor que sea menor.
 				int aux = InitialElement[j];
 				InitialElement[j] = InitialElement[j + 1];
 				InitialElement[j + 1] = aux;
