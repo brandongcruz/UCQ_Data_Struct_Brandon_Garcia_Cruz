@@ -55,6 +55,13 @@ int main()
     int index = myArray.GetIndexOf(5);
     std::cout << "La posición del elemento elegido es: " << index << std::endl;
     
+    //GetLastOf Function 
+    std::cout << "\nGetLastOf Function \n";
+    std::cout << " \nArray Original: \n";
+    myArray.Print();
+    int lastIndex = myArray.GetLastOf(2);
+    std::cout << "La posición del elemento elegido es: " << lastIndex << std::endl;
+    
     return 0;
 
 }
