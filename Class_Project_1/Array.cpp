@@ -167,7 +167,7 @@ void RawArray::SortFunction()
 	}
 }
 
-//Añade al RawArray "A" todos los elementos del RawArray "B", Manteniendo los elementos de "A" al principio y despues agregando los elementos de "B"
+//AÃ±ade al RawArray "A" todos los elementos del RawArray "B", Manteniendo los elementos de "A" al principio y despues agregando los elementos de "B"
 void RawArray::AppendArray(RawArray arrayToAppend)
 {
 }
@@ -181,7 +181,7 @@ void RawArray::SetSize(int newSize)
 
 }
 
-//Añade los arrayToInsert.Size-elementos al RawArray que llamó la función Insert, a partir del elemento en startIndex.
+//AÃ±ade los arrayToInsert.Size-elementos al RawArray que llamÃ³ la funciÃ³n Insert, a partir del elemento en startIndex.
 void RawArray::Insert(RawArray arrayToInsert, int startIndex)
 {
 
@@ -195,14 +195,26 @@ void RawArray::SumArrays(RawArray A, RawArray B)
 
 }
 
-//Recibe un valor X, si encuentra un elemento con dicho valor dentro del RawArray, regresa la posición de dicho elemento.
+//Recibe un valor X, si encuentra un elemento con dicho valor dentro del RawArray, regresa la posiciÃ³n de dicho elemento.
 //Si no encuentra el valor X dentro del RawArray, regresa -1.
 int RawArray::GetIndexOf(int x)
 {
-	return -1;
+int* auxPosition = InitialElement;
+
+	for (int i = 0; i < Size; i++)
+	{
+		if (*auxPosition == x)
+		{
+			return i;  // Se encontrÃ³ el elemento, se devuelve su posiciÃ³n
+		}
+
+		auxPosition++;
+	}
+
+	return -1;  // No se encontrÃ³ el elemento, se devuelve -1auxPosition++;
 }
 
-//Regresar la posición del último elemento del RawArray con el valor X dado. 
+//Regresar la posiciÃ³n del Ãºltimo elemento del RawArray con el valor X dado. 
 //Si no encuentra ningun elemento con valor x, regresar -1.
 int RawArray::GetLastOf(int x)
 {
@@ -210,7 +222,7 @@ int RawArray::GetLastOf(int x)
 }
 
 //Recibe un valor X; regresa el indice de todos los elementos con valor X
-//Si no encuentra ningun elemento condicho valor, regresa un array cuyo primer y único elemento es -1.
+//Si no encuentra ningun elemento condicho valor, regresa un array cuyo primer y Ãºnico elemento es -1.
 RawArray RawArray::GetIndicesOf(int x)
 {
 	return NULL;
