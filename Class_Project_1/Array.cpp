@@ -218,7 +218,20 @@ int* auxPosition = InitialElement;
 //Si no encuentra ningun elemento con valor x, regresar -1.
 int RawArray::GetLastOf(int x)
 {
-	return -1;
+	int* auxPosition = InitialElement;
+	int lastPosition = -1;
+
+	for (int i = 0; i < Size; i++)
+	{
+		if (*auxPosition == x)
+		{
+			lastPosition = i;  // Actualizar la última posición encontrada
+		}
+
+		auxPosition++;
+	}
+
+	return lastPosition;
 }
 
 //Recibe un valor X; regresa el indice de todos los elementos con valor X
