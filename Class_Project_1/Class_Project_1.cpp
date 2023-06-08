@@ -32,6 +32,8 @@ int main()
     //APARTADO PARA EL EXAMEN 
 
     //AssignEveryXElements
+     std::cout << "\nApartado examen \n";
+    std::cout << "Funcion AssignEveryXElements \n";
     std::cout << " \nArray Original: \n";
     myArray.Print();
     myArray.AssignEveryXElements(5, 2);
@@ -39,12 +41,19 @@ int main()
     myArray.Print();
 
     //SortFunction
+    std::cout << "\nSortFunction\n";
     std::cout << " \nArray Original: \n";
     myArray.Print();
     myArray.SortFunction();
     std::cout << " \nArray Ordenado: \n";
     myArray.Print();
     
+    //GetIndexOf Function
+    std::cout << "\nGetIndexOf Function \n";
+    std::cout << " \nArray Original: \n";
+    myArray.Print(); 
+    int index = myArray.GetIndexOf(5);
+    std::cout << "La posición del elemento elegido es: " << index << std::endl;
     
     return 0;
 
