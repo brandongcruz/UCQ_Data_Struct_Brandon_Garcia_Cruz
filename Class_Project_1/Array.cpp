@@ -188,8 +188,8 @@ void RawArray::AppendArray(RawArray arrayToAppend)
 		newArray.InitialElement[Size + i] = arrayToAppend.InitialElement[i];
 	}
 
-	// Actualizar el tamaño del nuevo arreglo
-	newArray.Size = newSize;
+	// Actualizar el tamano del nuevo arreglo
+	//newArray.Size = newSize;
 
 	// Imprimir el nuevo arreglo
 	newArray.Print();
