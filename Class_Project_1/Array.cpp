@@ -199,17 +199,19 @@ void RawArray::SumArrays(RawArray A, RawArray B)
 //Si no encuentra el valor X dentro del RawArray, regresa -1.
 int RawArray::GetIndexOf(int x)
 {
-int* auxPosition = InitialElement;
+	int* auxPosition = InitialElement;
 
 	for (int i = 0; i < Size; i++)
 	{
 		if (*auxPosition == x)
 		{
-			return i;  // Se encontró el elemento, se devuelve su posición
+			 return i;  // Se encontró el elemento, se devuelve su posición
+
 		}
 
 		auxPosition++;
 	}
+
 
 	return -1;  // No se encontró el elemento, se devuelve -1auxPosition++;
 }
@@ -231,6 +233,16 @@ int RawArray::GetLastOf(int x)
 		auxPosition++;
 	}
 
+	if (lastPosition == -1)
+	{
+		std::cout << " \n No se encontro ninguna posicion con valor " << x << std::endl;
+	}
+	else
+	{
+		std::cout << "La posicion del elemento elegido es: " << lastPosition << std::endl;
+	}
+
+
 	return lastPosition;
 }
 
@@ -238,6 +250,32 @@ int RawArray::GetLastOf(int x)
 //Si no encuentra ningun elemento condicho valor, regresa un array cuyo primer y único elemento es -1.
 RawArray RawArray::GetIndicesOf(int x)
 {
-	return NULL;
+
+	RawArray indices(Size);  // Crea un objeto RawArray de tamano Size para almacenar los indices
+
+		int* auxPosition = InitialElement;
+		bool flag = false;
+
+		for (int i = 0; i < Size; i++)
+		{
+			if (*auxPosition == x)
+			{
+				indices.InitialElement[i] = i;  // Usamos el puntero InitialElement para llenar el objeto indices.
+				flag = true;
+			}
+			else
+			{
+				indices.InitialElement[i] = -1;  // Asignamos -1 para senalar que el valor del indice no coincide con lo que se busca
+			}
+
+			auxPosition++;
+		}
+
+		if (flag)
+		{
+			std::cout << "No se encontro una coincidencia del valor " << x << " en las casillas marcadas con -1\n";
+		}
+
+		return indices;
 
 }

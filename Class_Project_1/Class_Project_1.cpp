@@ -50,20 +50,24 @@ int main()
     
     //GetIndexOf Function
     std::cout << "\nGetIndexOf Function \n";
-    std::cout << " \nArray Original: \n";
+    std::cout << "Array Original: \n";
     myArray.Print(); 
     int index = myArray.GetIndexOf(5);
-    std::cout << "La posición del elemento elegido es: " << index << std::endl;
+    std::cout << "La posicion del elemento elegido es: " << index << std::endl;
     
     //GetLastOf Function 
     std::cout << "\nGetLastOf Function \n";
-    std::cout << " \nArray Original: \n";
     myArray.Print();
-    int lastIndex = myArray.GetLastOf(2);
-    std::cout << "La posición del elemento elegido es: " << lastIndex << std::endl;
+    myArray.GetLastOf(5);
     
-    return 0;
+    //GetIndicesOf
+    std::cout << "\nGetIndicesOf Function \n";
+    RawArray indices = myArray.GetIndicesOf(5);
+    indices.Print();
 
+
+
+    return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
