@@ -170,6 +170,29 @@ void RawArray::SortFunction()
 //Añade al RawArray "A" todos los elementos del RawArray "B", Manteniendo los elementos de "A" al principio y despues agregando los elementos de "B"
 void RawArray::AppendArray(RawArray arrayToAppend)
 {
+	// creamos un nuevo objeto RawArray con el tamano definido por el Size de myArray + el Size del nuevo Arreglo 
+	int newSize = Size + arrayToAppend.Size;
+	
+	RawArray newArray(newSize);
+
+	// Copiar los elementos de myArray al nuevo arreglo
+	for (int i = 0; i < Size; i++)
+	{
+		newArray.InitialElement[i] = InitialElement[i];
+	}
+
+	// copiamos los elementos del arrayToAppend al nuevo arreglo. modificamos en limite de la iteracion al tamano del arrayToAppend
+	for (int i = 0; i < arrayToAppend.Size; i++)
+	{
+		// Copiamos los elementos empezando desde el indice Size
+		newArray.InitialElement[Size + i] = arrayToAppend.InitialElement[i];
+	}
+
+	// Actualizar el tamaño del nuevo arreglo
+	newArray.Size = newSize;
+
+	// Imprimir el nuevo arreglo
+	newArray.Print();
 }
 
 
@@ -274,8 +297,14 @@ RawArray RawArray::GetIndicesOf(int x)
 		if (flag)
 		{
 			std::cout << "No se encontro una coincidencia del valor " << x << " en las casillas marcadas con -1\n";
+			indices.Print();
 		}
-
+		else
+		{
+			std::cout << "No se encontro NINGUN valor " << x << " en el arreglo \n";
+			indices.Size = 1;  // definimos el tamano que tendra el objeto 
+			indices.InitialElement[0] = -1;  // Asigna -1 como unico elemento en el objeto indices
+			indices.Print();  // imprimimos el objeto indices
+		}
 		return indices;
-
 }

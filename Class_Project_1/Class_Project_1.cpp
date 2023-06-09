@@ -32,7 +32,7 @@ int main()
     //APARTADO PARA EL EXAMEN 
 
     //AssignEveryXElements
-     std::cout << "\nApartado examen \n";
+    std::cout << "\nApartado examen \n";
     std::cout << "Funcion AssignEveryXElements \n";
     std::cout << " \nArray Original: \n";
     myArray.Print();
@@ -62,8 +62,17 @@ int main()
     
     //GetIndicesOf
     std::cout << "\nGetIndicesOf Function \n";
-    RawArray indices = myArray.GetIndicesOf(5);
-    indices.Print();
+    myArray.GetIndicesOf(0);
+
+    //AppendArray Function 
+    std::cout << "\nAppendArray Function \n";
+    
+    RawArray myAnotherArray(10);
+    myAnotherArray.Initial(1);
+    std::cout << " \n Nuevo Array: \n";
+    myAnotherArray.Print();
+    std::cout << " \n Fucion de arreglos :v : \n";
+    //myArray.AppendArray(myAnotherArray);
 
 
 
