@@ -196,12 +196,40 @@ void RawArray::AppendArray(RawArray arrayToAppend)
 }
 
 
-//Modifica el tamano del RawArray para igualar el numero de elementos de newSize. 
+//Modifica el tamaño del RawArray para igualar el numero de elementos de newSize. 
 //Si newSize es mayor al Size actual del RawArray, Conserva el total de sus Size_elementos 
 //Si newSize es menor al Size actual del RawArray; conserva los primeros elementos hasta newSize 
+
 void RawArray::SetSize(int newSize)
 {
+// Crear un nuevo arreglo con el tamaño especificado
+	int* newArray = new int[newSize];
 
+	// Copiar los elementos del arreglo actual al nuevo arreglo
+	int copies = std::min(Size, newSize);
+	//La función std::min(X,Y) es una función de C++ que devuelve el valor mínimo entre dos valores, X y Y. 
+	//https://barcelonageeks.com/std-min-en-c/ 
+	//En el contexto, es para determinar la cantidad de elementos que se copiarán del arreglo original al nuevo arreglo.
+	for (int i = 0; i < copies; i++)
+	{
+		newArray[i] = InitialElement[i];
+	}
+
+	// Si el nuevo tamaño es mayor que el tamaño actual, inicializar los elementos adicionales en 0
+	if (newSize > Size)
+	{
+		for (int i = Size; i < newSize; i++)
+		{
+			newArray[i] = 0;
+		}
+	}
+
+	// Liberar la memoria del arreglo actual
+	delete[] InitialElement;
+
+	// Asignar el nuevo arreglo y actualizar el tamaño
+	InitialElement = newArray;
+	Size = newSize;
 }
 
 //Añade los arrayToInsert.Size-elementos al RawArray que llamó la función Insert, a partir del elemento en startIndex.
