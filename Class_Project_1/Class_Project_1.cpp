@@ -73,6 +73,16 @@ int main()
     myAnotherArray.Print();
     std::cout << " \n Fucion de arreglos :v : \n";
     //myArray.AppendArray(myAnotherArray);
+    
+     //SetSize function
+    std::cout << " \n SetSize Function\n";
+    std::cout << " Original Array\n";
+    myArray.Print(); 
+    myArray.SetSize(5); 
+    std::cout << " Modified Arrays\n";
+    myArray.Print();
+    myArray.SetSize(8);
+    myArray.Print();
 
 
 
