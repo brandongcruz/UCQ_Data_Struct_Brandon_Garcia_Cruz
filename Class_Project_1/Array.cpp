@@ -101,6 +101,7 @@ void RawArray::TestCaseReplace(int Values)
 	}
 }
 
+
 // A PARTIR DE AQUI SE CONSTRUYERON LAS FUNCIONES PARA REALIZAR EL EXAMEN.
 
 //Asignar valor V a uno de cada X elementos del RawArray, donde X y V son un entero.
@@ -170,29 +171,25 @@ void RawArray::SortFunction()
 //Añade al RawArray "A" todos los elementos del RawArray "B", Manteniendo los elementos de "A" al principio y despues agregando los elementos de "B"
 void RawArray::AppendArray(RawArray arrayToAppend)
 {
-	// creamos un nuevo objeto RawArray con el tamano definido por el Size de myArray + el Size del nuevo Arreglo 
-	int newSize = Size + arrayToAppend.Size;
-	
-	RawArray newArray(newSize);
+	int* auxPointer = InitialElement;
+	InitialElement = new int[Size + arrayToAppend.Size];
 
 	// Copiar los elementos de myArray al nuevo arreglo
 	for (int i = 0; i < Size; i++)
 	{
-		newArray.InitialElement[i] = InitialElement[i];
+		InitialElement[i] = auxPointer[i];
 	}
 
-	// copiamos los elementos del arrayToAppend al nuevo arreglo. modificamos en limite de la iteracion al tamano del arrayToAppend
+	// Copiar los elementos de arrayToAppend al nuevo arreglo
 	for (int i = 0; i < arrayToAppend.Size; i++)
 	{
-		// Copiamos los elementos empezando desde el indice Size
-		newArray.InitialElement[Size + i] = arrayToAppend.InitialElement[i];
+		InitialElement[Size + i] = arrayToAppend.InitialElement[i];
 	}
 
-	// Actualizar el tamano del nuevo arreglo
-	//newArray.Size = newSize;
-
-	// Imprimir el nuevo arreglo
-	newArray.Print();
+	Size = Size + arrayToAppend.Size;
+	// Liberar la memoria del objeto actual
+	delete[] auxPointer;
+	// Liberar la memoria del objeto arrayToAppend
 }
 
 
@@ -241,9 +238,12 @@ void RawArray::Insert(RawArray arrayToInsert, int startIndex)
 //Suma elemento por elemento los valores del Array "A" con los valores del array "B". 
 //A y B tienen el mismo Size. 
 //Retorna un RawArray distinto de A y B con los resultados de la suma.
-void RawArray::SumArrays(RawArray A, RawArray B)
+void RawArray::SumArrays(RawArray A)
 {
-
+	for (int i = 0; i < Size; i++)
+	{
+		InitialElement[i] = InitialElement[i] + A.InitialElement[i];
+	}
 }
 
 //Recibe un valor X, si encuentra un elemento con dicho valor dentro del RawArray, regresa la posición de dicho elemento.
@@ -302,37 +302,34 @@ int RawArray::GetLastOf(int x)
 RawArray RawArray::GetIndicesOf(int x)
 {
 
-	RawArray indices(Size);  // Crea un objeto RawArray de tamano Size para almacenar los indices
+	RawArray indices(Size); // Crea un objeto RawArray de tamaño Size para almacenar los índices
 
-		int* auxPosition = InitialElement;
-		bool flag = false;
+	int* auxPosition = InitialElement;
+	int currentIndex = 0;
 
-		for (int i = 0; i < Size; i++)
+	for (int i = 0; i < Size; i++)
+	{
+		if (*auxPosition == x)
 		{
-			if (*auxPosition == x)
-			{
-				indices.InitialElement[i] = i;  // Usamos el puntero InitialElement para llenar el objeto indices.
-				flag = true;
-			}
-			else
-			{
-				indices.InitialElement[i] = -1;  // Asignamos -1 para senalar que el valor del indice no coincide con lo que se busca
-			}
+			indices.InitialElement[currentIndex] = i; // Guarda el índice en el objeto indices
+			currentIndex++;
+		}
+		auxPosition++;
+	}
 
-			auxPosition++;
-		}
+	indices.Size = currentIndex; // Actualiza el tamaño del objeto indices al número de índices encontrados
+	indices.Print(); // Imprime el objeto indices
 
-		if (flag)
-		{
-			std::cout << "No se encontro una coincidencia del valor " << x << " en las casillas marcadas con -1\n";
-			indices.Print();
-		}
-		else
-		{
-			std::cout << "No se encontro NINGUN valor " << x << " en el arreglo \n";
-			indices.Size = 1;  // definimos el tamano que tendra el objeto 
-			indices.InitialElement[0] = -1;  // Asigna -1 como unico elemento en el objeto indices
-			indices.Print();  // imprimimos el objeto indices
-		}
-		return indices;
+	if (currentIndex > 0)
+	{
+		std::cout << "Se encontraron coincidencias del valor " << x << " en las casillas marcadas.\n";
+	}
+	else
+	{
+		std::cout << "No se encontró ninguna coincidencia del valor " << x << " en el arreglo.\n";
+	}
+
+	return indices;
+
 }
+

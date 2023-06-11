@@ -36,7 +36,7 @@ public:
 
 	void Insert(RawArray arrayToInsert, int startIndex);
 
-	void SumArrays(RawArray A, RawArray B);
+	void SumArrays(RawArray A);
 
 	int GetIndexOf(int x);
 
@@ -46,6 +46,7 @@ public:
 
 	void TestCaseReplace(int Values);
 
+	void DeleteMemory();
 
 	//Es un puntero que apunta a la primera posicion del arreglo. Sirve como referencia 
 	int* InitialElement;

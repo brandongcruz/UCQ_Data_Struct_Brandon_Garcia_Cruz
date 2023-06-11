@@ -62,19 +62,20 @@ int main()
     
     //GetIndicesOf
     std::cout << "\nGetIndicesOf Function \n";
-    myArray.GetIndicesOf(0);
+    myArray.GetIndicesOf(5);
 
     //AppendArray Function 
-    std::cout << "\nAppendArray Function \n";
+    std::cout << " \nArray Original: \n";
+    myArray.Print();
+    RawArray test = RawArray(3);
+    test.Initial(0);
+    std::cout << " \nArreglo a agregar \n";
+    test.Print();
+    myArray.AppendArray(test);
+    std::cout << " \nArray Final: \n";
+    myArray.Print();
     
-    RawArray myAnotherArray(10);
-    myAnotherArray.Initial(1);
-    std::cout << " \n Nuevo Array: \n";
-    myAnotherArray.Print();
-    std::cout << " \n Fucion de arreglos :v : \n";
-    //myArray.AppendArray(myAnotherArray);
-    
-     //SetSize function
+    //SetSize function
     std::cout << " \n SetSize Function\n";
     std::cout << " Original Array\n";
     myArray.Print(); 
@@ -84,7 +85,19 @@ int main()
     myArray.SetSize(8);
     myArray.Print();
 
-
+    //SumArrays Function
+    std::cout << "\nSumArrays Function\n";
+    std::cout << "Array A\n";
+    RawArray arrayA(3);
+    arrayA.Initial(3);
+    arrayA.Print(); 
+    std::cout << "Array B\n";
+    RawArray arrayB(3);
+    arrayB.Initial(2);
+    arrayB.Print();
+    arrayB.SumArrays(arrayA);
+    std::cout << "Resultado:\n";
+    arrayB.Print();
 
     return 0;
 }
