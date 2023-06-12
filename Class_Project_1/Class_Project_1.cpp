@@ -75,6 +75,19 @@ int main()
     std::cout << " \nArray Final: \n";
     myArray.Print();
     
+    //Función Insert
+    std::cout << " \n Insert Function\n";
+    myArray.Initial(0);
+
+    RawArray toBeInserted = RawArray(3);
+    toBeInserted.Initial(1);
+
+    int currentStartIndex = 3;
+    myArray.Insert(toBeInserted, currentStartIndex);
+
+    myArray.Print();
+
+    
     //SetSize function
     std::cout << " \n SetSize Function\n";
     std::cout << " Original Array\n";
