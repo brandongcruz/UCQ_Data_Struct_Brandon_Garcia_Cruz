@@ -34,7 +34,7 @@ public:
 
 	void SetSize(int newSize);
 
-	void Insert(RawArray arrayToInsert, int startIndex);
+	void Insert(RawArray& arrayToInsert, int startIndex);
 
 	void SumArrays(RawArray& A);
 
