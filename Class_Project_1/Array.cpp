@@ -169,7 +169,7 @@ void RawArray::SortFunction()
 }
 
 //Añade al RawArray "A" todos los elementos del RawArray "B", Manteniendo los elementos de "A" al principio y despues agregando los elementos de "B"
-void RawArray::AppendArray(RawArray arrayToAppend)
+void RawArray::AppendArray(RawArray& arrayToAppend)
 {
 	int* auxPointer = InitialElement;
 	InitialElement = new int[Size + arrayToAppend.Size];
@@ -238,7 +238,7 @@ void RawArray::Insert(RawArray arrayToInsert, int startIndex)
 //Suma elemento por elemento los valores del Array "A" con los valores del array "B". 
 //A y B tienen el mismo Size. 
 //Retorna un RawArray distinto de A y B con los resultados de la suma.
-void RawArray::SumArrays(RawArray A)
+void RawArray::SumArrays(RawArray& A)
 {
 	for (int i = 0; i < Size; i++)
 	{
@@ -301,8 +301,20 @@ int RawArray::GetLastOf(int x)
 //Si no encuentra ningun elemento condicho valor, regresa un array cuyo primer y único elemento es -1.
 RawArray RawArray::GetIndicesOf(int x)
 {
+	int cont = 0; 
 
-	RawArray indices(Size); // Crea un objeto RawArray de tamaño Size para almacenar los índices
+	// establecemos la cantidad de elementos encontrados en el array. 
+
+	for(int i = 0; i < Size; i++)
+	{
+		if (InitialElement[i] == x)
+		{
+			cont++;
+		}
+
+	}
+
+	RawArray indices(cont); // Crea un objeto RawArray de tamaño Size para almacenar los índices
 
 	int* auxPosition = InitialElement;
 	int currentIndex = 0;
@@ -317,7 +329,7 @@ RawArray RawArray::GetIndicesOf(int x)
 		auxPosition++;
 	}
 
-	indices.Size = currentIndex; // Actualiza el tamaño del objeto indices al número de índices encontrados
+	indices.Size = currentIndex; // Actualiza el Size del objeto indices al numero de indices encontrados
 	indices.Print(); // Imprime el objeto indices
 
 	if (currentIndex > 0)

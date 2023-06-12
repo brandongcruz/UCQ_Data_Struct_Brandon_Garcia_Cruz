@@ -30,13 +30,13 @@ public:
 
 	void SortFunction();
 
-	void AppendArray(RawArray arrayToAppend);
+	void AppendArray(RawArray& arrayToAppend);
 
 	void SetSize(int newSize);
 
 	void Insert(RawArray arrayToInsert, int startIndex);
 
-	void SumArrays(RawArray A);
+	void SumArrays(RawArray& A);
 
 	int GetIndexOf(int x);
 
