@@ -230,9 +230,44 @@ void RawArray::SetSize(int newSize)
 }
 
 //Añade los arrayToInsert.Size-elementos al RawArray que llamó la función Insert, a partir del elemento en startIndex.
-void RawArray::Insert(RawArray arrayToInsert, int startIndex)
+void RawArray::Insert(RawArray& arrayToInsert, int startIndex)
 {
+// Obtener el tamaño del RawArray actual y el RawArray a insertar
+	int currentSize = Size;
+	int insertSize = arrayToInsert.Size;
 
+	// Calcula el nuevo tamaño del RawArray después de la inserción
+	int newSize = currentSize + insertSize;
+
+	// Crea un nuevo RawArray con el nuevo tamaño
+	int* newArray = new int[newSize];
+
+	// Copia los elementos del RawArray actual hasta el índice 
+	for (int i = 0; i < startIndex; i++) {
+		newArray[i] = InitialElement[i];
+	}
+
+	// Copiar los elementos del RawArray a insert
+	for (int i = 0; i < insertSize; i++) {
+		newArray[startIndex + i] = arrayToInsert.InitialElement[i];
+	}
+
+	// Copiar los elementos restantes del RawArray actual
+	for (int i = startIndex; i < currentSize; i++) {
+		newArray[insertSize + i] = InitialElement[i];
+	}
+
+	
+	delete[] InitialElement;
+
+	// Actualizar el tamaño, el puntero y los elementos del RawArray actual
+	Size = newSize;
+	InitialElement = newArray;
+
+	// Actualizar el tamaño y los elementos del RawArray a insertar
+	arrayToInsert.Size = 0;
+	delete[] arrayToInsert.InitialElement;
+	arrayToInsert.InitialElement = nullptr;
 }
 
 //Suma elemento por elemento los valores del Array "A" con los valores del array "B". 
