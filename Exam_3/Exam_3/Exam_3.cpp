@@ -3,8 +3,37 @@
 #include "Inbox.h"
 #include "LinkedList.h"
 
+#include "customVector.h"
+#include "rawArray.h"
+
 int main()
 {
+
+    //Parte 1 del Examen 
+
+    // Crear un CustomVector de caracteres
+    CustomVector<char> myVector(5);
+    myVector[0] = 'a';
+    myVector[1] = 'b';
+    myVector[2] = 'c';
+    myVector[3] = 'd';
+    myVector[4] = 'e';
+
+    // Acceder a elementos desde el final usando índices negativos
+    std::cout << "CustomVector: " << myVector[-1] << std::endl;
+
+    // Crear un RawArray de enteros y asignar valores
+    RawArray<int> myArray(5);
+    for (int i = 0; i < 5; i++) {
+        myArray[i] = i + 1;
+    }
+
+    // Acceder a elementos desde el final usando índices negativos
+    std::cout << "RawArray: " << myArray[-1] << std::endl;
+
+
+
+    // Fin Parte 1
     std::cout << "Hello Professor!\n";
     std::cout << "Examen tercer parcial \n";
     std::cout << "Projecto Email";
@@ -79,6 +108,8 @@ int main()
         std::cout << "De: " << email->getSender() << ", Asunto: " << email->getSubject() << "\n";
     }
 
+
+   
 
 
 

@@ -127,15 +127,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="customVector.cpp" />
     <ClCompile Include="Email.cpp" />
     <ClCompile Include="Exam_3.cpp" />
     <ClCompile Include="Inbox.cpp" />
     <ClCompile Include="LinkedList.cpp" />
+    <ClCompile Include="rawArray.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="customVector.h" />
     <ClInclude Include="Email.h" />
     <ClInclude Include="Inbox.h" />
     <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="rawArray.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
